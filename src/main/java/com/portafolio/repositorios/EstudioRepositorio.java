@@ -9,3 +9,4 @@ import com.portafolio.entidades.Estudio;
 public interface EstudioRepositorio extends JpaRepository <Estudio,Integer> {
 
 }
+ 

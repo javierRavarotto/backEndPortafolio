@@ -47,8 +47,7 @@ public class ProyectoControlador {
 	
 	@PutMapping("proyecto/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Proyecto actualizar(@RequestBody Proyecto proyecto , @PathVariable Integer id) {
-		
+	public Proyecto actualizar(@RequestBody Proyecto proyecto) {
 		Proyecto proyectoActual =proyectoServicio.actualizar(proyecto);
 		
 		return proyectoActual; 

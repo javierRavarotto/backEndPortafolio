@@ -38,7 +38,6 @@ public class ProyectoServicio {
 	}
 	@Transactional
 	public Proyecto actualizar(Proyecto proyecto) {
-		
 	return 	proyectoRepositorio.save(proyecto);
 	
 	}

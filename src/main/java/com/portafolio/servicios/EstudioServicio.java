@@ -24,6 +24,7 @@ public class EstudioServicio {
 	
 	@Transactional
 	public List<Estudio> buscarTodo() {
+		
 		List<Estudio> estudios = estudioRepositorio.findAll();
 		return estudios;
 	}

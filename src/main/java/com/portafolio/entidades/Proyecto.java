@@ -82,6 +82,22 @@ public class Proyecto {
 	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Proyecto [idProyecto=" + idProyecto + ", nombre=" + nombre + ", urlGithub=" + urlGithub + ", imagen="
+				+ imagen + ", descripcion=" + descripcion + ", alta=" + alta + ", fechaCreacion=" + fechaCreacion + "]";
+	}
 	
 
+	/*
+	MYSQL_ADDON_HOST=beylta3fkdfkqojjsui1-mysql.services.clever-cloud.com
+	MYSQL_ADDON_DB=beylta3fkdfkqojjsui1
+	MYSQL_ADDON_USER=udo0zjg4f0rnrssl
+	MYSQL_ADDON_PORT=3306
+	MYSQL_ADDON_PASSWORD=sZnfCzwYM81t645OykJq
+	MYSQL_ADDON_URI=mysql://udo0zjg4f0rnrssl:sZnfCzwYM81t645OykJq@beylta3fkdfkqojjsui1-mysql.services.clever-cloud.com:3306/beylta3fkdfkqojjsui1
+
+*/	
 }

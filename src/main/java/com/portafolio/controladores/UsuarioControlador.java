@@ -16,51 +16,58 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.portafolio.entidades.Estudio;
-import com.portafolio.servicios.EstudioServicio;
+import com.portafolio.entidades.Usuario;
 import com.portafolio.servicios.UsuarioServicio;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/api")
-public class EstudioControlador {
+public class UsuarioControlador {
+
 	
-	 @Autowired
-	 EstudioServicio estudioServicio;
 	 @Autowired
 	 UsuarioServicio usuarioServicio;
 	 
-	@GetMapping("/estudio")
-	public List<Estudio> lista(ModelMap model) {
-		List<Estudio> listaEstudio = estudioServicio.buscarTodo();
-		return listaEstudio;
+	@GetMapping("/usuario")
+	public List<Usuario> lista(ModelMap model) {
+		List<Usuario> listaUsuario = usuarioServicio.buscarTodo();
+		return listaUsuario;
 	}
 	
-	@GetMapping("/estudio/{id}")
-	public Estudio lista(ModelMap model, @PathVariable Integer id) {
-		 
-		return estudioServicio.buscarId(id);
-	}
-	@PostMapping("/estudio")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Estudio create(@RequestBody Estudio estudio){
+	@GetMapping("/usuario/{id}")
+	public Usuario buscarId(ModelMap model, @PathVariable Integer id) {
 		
-		return estudioServicio.crear(estudio);	
+		return usuarioServicio.buscarId(id);
+	}
+
+	@PostMapping("usuario/login")
+	public Usuario buscarNombre(ModelMap model,@RequestBody Usuario usuario) {
+		Usuario usuarioNombre=usuarioServicio.buscarPorNombre(usuario);
+		return usuarioNombre;
 	}
 	
-	@PutMapping("estudio/{id}")
+	@PostMapping("/usuario")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Estudio actualizar(@RequestBody Estudio estudio , @PathVariable Integer id) {
-		
-		Estudio estudioActual =estudioServicio.actualizar(estudio);
-		
-		return estudioActual; 
+	public Usuario create(@RequestBody Usuario usuario){
+		return usuarioServicio.crear(usuario);	
 	}
-	@DeleteMapping("estudio/{id}")
+	
+	@PutMapping("usuario/{id}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Usuario actualizar(@RequestBody Usuario usuario , @PathVariable Integer id) {
+		
+		Usuario usuarioActual =usuarioServicio.actualizar(usuario);
+		
+		return usuarioActual; 
+	}
+	@DeleteMapping("usuario/{id}")
 	public void borrar( @PathVariable Integer id) {
 		
-		estudioServicio.borrar(id);
+		usuarioServicio.borrar(id);
 		}
-	
 
+	
 }
