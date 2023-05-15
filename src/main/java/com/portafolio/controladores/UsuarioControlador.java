@@ -22,7 +22,7 @@ import com.portafolio.servicios.UsuarioServicio;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"https://portafolio-39a4d.web.app/"})
 @RestController
 @RequestMapping("/api")
 public class UsuarioControlador {
