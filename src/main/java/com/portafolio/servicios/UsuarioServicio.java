@@ -32,11 +32,6 @@ public class UsuarioServicio {
 				Usuario usuarioNoEncontrado = new Usuario();
 				return usuarioNoEncontrado;	
 			}
-			
-			
-		
-		
-		
 	}
 	
 	@Transactional
@@ -52,16 +47,18 @@ public class UsuarioServicio {
 		}else {
 			usuario.setAdmin(false);
 		};
-		usuario.setAlta(true);
-		usuario.setFechaCreacion(new Date());
-	return 	usuarioRepositorio.save(usuario);
-	
+		Usuario usuarioNombre = usuarioRepositorio.buscarNombre(usuario.getNombre());
+		if(usuarioNombre == null) {
+			usuario.setAlta(true);
+			usuario.setFechaCreacion(new Date());
+		return 	usuarioRepositorio.save(usuario);
+		}else {
+			return new Usuario();
+		}
 	}
 	@Transactional
 	public Usuario actualizar(Usuario usuario) {
-		
 	return 	usuarioRepositorio.save(usuario);
-	
 	}
 	@Transactional
 	public void borrar( Integer id) {
@@ -71,6 +68,5 @@ public class UsuarioServicio {
 		}catch (Exception e) {
 			
 		}
-		
 	}
 }
