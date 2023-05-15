@@ -20,7 +20,7 @@ import com.portafolio.entidades.Estudio;
 import com.portafolio.servicios.EstudioServicio;
 import com.portafolio.servicios.UsuarioServicio;
 
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"https://portafolio-39a4d.web.app/"})
 @RestController
 @RequestMapping("/api")
 public class EstudioControlador {
