@@ -2,7 +2,7 @@
 
 # Portafolio backend
 
-Es un `portafolio para poder mostrar otros proyectoc, estudios y hanilidades
+Es un portafolio para poder mostrar otros proyectos, estudios y habilidades
 
 
 
